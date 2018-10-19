@@ -11,11 +11,10 @@
     "author": "Csongor Farago",
     "license": "ISC",
     "dependencies": {
-        "ava": "^0.23.0",
-        "babel-register": "^6.26.0",
         "inquirer": "^6.2.0",
-        "supertest": "^3.3.0",
-        "ws": "^6.1.0"
+        "ws": "^6.1.0",
+        "ava": "^0.23.0",
+        "babel-register": "^6.26.0"
     },
     "ava": {
         "files": [

@@ -37,7 +37,7 @@ server.on('connection', function connection(socket) {
     //decoding message
     var code =  message.substring(0, 2);
     var data =  JSON.parse(message.substring(2));
-    //console.log('received:{ code: '+code+' , message: '+ JSON.stringify(data) +' }');
+    //console.log('received:{ c: '+code+' , msg: '+ JSON.stringify(data) +' }');
  
     //Code 01 - client settings
     if(code == "01"){
@@ -71,7 +71,8 @@ server.on('connection', function connection(socket) {
     if(code == "03"){
         var s = "";
         var time = Date.now() - 5000;
-        for(var i = messages.length-1; i >= 0 && messages[i]['time'] >= time; i--){
+        var l = messages.length; 
+        for(var i = l-1; i >= 0 && messages[i]['time'] >= time; i--){
             s+= messages[i]['message'] + " ";
         }          
         
