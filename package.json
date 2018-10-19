@@ -1,14 +1,28 @@
 {
-  "name": "cli",
-  "version": "1.0.0",
-  "description": "cli",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Theodore",
-  "license": "ISC",
-  "dependencies": {
-    "inquirer": "^6.2.0"
-  }
+    "name": "chat-test",
+    "version": "1.0.0",
+    "description": "chat for Cloudecade",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "nyc node_modules/.bin/ava tests/*.test.js --verbose",
+        "test:watch": "node_modules/.bin/ava --verbose --watch"
+    },
+    "author": "Csongor Farago",
+    "license": "ISC",
+    "dependencies": {
+        "ava": "^0.23.0",
+        "babel-register": "^6.26.0",
+        "inquirer": "^6.2.0",
+        "supertest": "^3.3.0",
+        "ws": "^6.1.0"
+    },
+    "ava": {
+        "files": [
+            "server.js"
+        ],
+        "require": [
+            "babel-register"
+        ]
+    }
 }
